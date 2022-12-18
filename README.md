@@ -1,34 +1,31 @@
-LQDOJ: Le Quy Don Online Judge
+TLEOJ: TLE Online Judge
 ===
-
-[![](https://github.com/DMOJ/online-judge/workflows/build/badge.svg)](https://lqdoj.edu.vn/)
-[![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://python.org)
-[![OS](https://img.shields.io/badge/Ubuntu-16.04%20%7C%2018.04%20%7C%2020.04-brightgreen)](https://ubuntu.com/download)
-[![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](https://www.gnu.org/licenses/agpl-3.0.en.html)
 
 ## Overview
 
-Homepage: [https://lqdoj.edu.vn](https://lqdoj.edu.vn)
+Homepage: [https://oj.csoj.tech](https://oj.csoj.tech)
 
-Based on [DMOJ](https://dmoj.ca/).
+Based on [LQDOJ](https://lqdoj.edu.vn/).
 
 Supported languages: 
 
 - Assembly (x64)
 - AWK
+- Brainf**k
 - C
-- C++03 / C++11 / C++14 / C++17
-- Java 11
+- C++03 / C++11 / C++14 / C++17 / C++20
+- Java 8 / Java 11
 - Pascal
 - Perl
 - Python 2 / Python 3
+- PyPy 2 / PyPy 3
 
 Support plagiarism detection via [Stanford MOSS](https://theory.stanford.edu/~aiken/moss/).
 
 ## Installation
 
 Most of the setup are the same as DMOJ installations. You can view the installation guide of DMOJ here: https://docs.dmoj.ca/#/site/installation.
-There is one minor change: Instead of `git clone https://github.com/DMOJ/site.git`, you clone this repo `git clone https://github.com/LQDJudge/online-judge.git`.
+There is one minor change: Instead of `git clone https://github.com/DMOJ/site.git`, you clone this repo `git clone https://github.com/TLEJudge/online-judge.git`.
 
 ### Additional Steps in Production:
 
@@ -93,29 +90,3 @@ Most of the steps are similar to Django tutorials. Here are two usual steps:
  - Change .css/.scss files in `resources` folder
  - ```./make_style && python manage.py collectstatic```
  - Sometimes you need to `Ctrl + F5` to see the new user interface in browser.
- 
-## Screenshots
-
-### Leaderboard
-
-Leaderboard with information about contest rating, performance points and real name of all users.
-
-![](https://i.imgur.com/ampxHXM.png)
-
-### Admin dashboard
-
-Admin dashboard helps you easily managing problems, users, contests and blog posts.
-
-![](https://i.imgur.com/iccr3mh.png)
-
-### Statement editor
-
-You can write the problems' statement in Markdown with LaTeX figures and formulas supported.
-
-![](https://i.imgur.com/CQVC754.png)
-
-### Chat
-
-Users can communicate with each other and can see who's online.
-
-![](https://i.imgur.com/y9SGCgl.png)
