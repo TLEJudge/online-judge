@@ -1,1 +1,1 @@
-Activate your {{ SITE_NAME }} account
+Activate your TLEOJ account

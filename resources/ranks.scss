@@ -1,7 +1,56 @@
+/*
 .admin a, .admin {
     color: black !important;
     font-weight: bold !important;
+}*/
+
+.admin a, .admin {
+    color: #FFC0CB !important;
+    font-weight: bold !important;
 }
+
+.admin:before{
+    content: "🌸 ";
+}
+
+
+.setter a, .setter {
+    color: #99d1db !important;
+}
+
+.setter:before {
+    content: "📖 ";
+}
+
+
+.developer::after {
+    content: none;
+}
+
+
+.developer a, .developer {
+    color: #e78284 !important;
+}
+
+.developer:before {
+    content: "👨‍💻 ";
+}
+
+.developer {
+    content: " " !important;
+}
+
+.developer::text {
+    content: " ";
+}
+
+.developer:after {
+    content: " (dev)";
+    color: #e5c890 !important;
+    font-weight: bold !important;
+}
+
+
 
 @mixin rate-svg-color($color) {
     circle {
@@ -52,12 +101,18 @@ svg.rate-box {
         @include rate-svg-color(#e00);
     }
 
+    &.rate-admin {
+        @include rate-svg-color(#FFC0CB);
+    }
+
     &.rate-target {
         circle:last-child {
             stroke: none;
             fill: #e00;
         }
     }
+
+    
 }
 
 .rating {
@@ -95,6 +150,10 @@ svg.rate-box {
 
 .rate-grandmaster, .rate-grandmaster a, .rate-target, .rate-target a {
     color: #e00;
+}
+
+.rate-admin, .rate-admin a {
+    color: #FFC0CB;
 }
 
 .rate-group {

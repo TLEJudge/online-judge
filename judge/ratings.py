@@ -246,8 +246,9 @@ RATING_LEVELS = [
     "Master",
     "Grandmaster",
     "Target",
+    "Admin",
 ]
-RATING_VALUES = [1000, 1400, 1700, 1900, 2100, 2400, 3000]
+RATING_VALUES = [1000, 1400, 1700, 1900, 2100, 2400, 3000, 9999]
 RATING_CLASS = [
     "rate-newbie",
     "rate-amateur",
@@ -257,6 +258,7 @@ RATING_CLASS = [
     "rate-master",
     "rate-grandmaster",
     "rate-target",
+    "rate-admin",
 ]
 
 

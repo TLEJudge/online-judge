@@ -14,3 +14,13 @@
 @import "misc";
 @import "chatbox";
 @import "organization";
+
+.snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(white, white);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px white);
+  }
+  

@@ -226,6 +226,7 @@ urlpatterns = [
         ),
     ),
     url(r"^problems/", paged_list_view(problem.ProblemList, "problem_list")),
+    url(r"^problems", paged_list_view(problem.ProblemList, "problem_list")),
     url(r"^problems/random/$", problem.RandomProblem.as_view(), name="problem_random"),
     url(
         r"^problems/feed/",

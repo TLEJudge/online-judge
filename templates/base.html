@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
-<head>
+<head onload="start()">
     <title>{% block title %}{{ title }} - {{ SITE_LONG_NAME }}{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     {% if misc_config.meta_keywords %}
@@ -194,6 +194,7 @@
     </noscript>
 </head>
 <body>
+
 <svg width="0" height="0" style="display: block">
     <defs>
         <clipPath id="rating-clip"><circle cx="8" cy="8" r="7"/></clipPath>
@@ -223,26 +224,21 @@
         <div style="float: right; display: inline-flex; font-size: larger; align-items: center; height: 100%;">
             <span class="navbar-icons">
                 {% if request.user.is_authenticated %}
-                <span title="{{_('Chat')}}">
-                    <a id="chat-icon" href="{{ url('chat', '') }}" class="icofont-wechat navbar-icon" aria-hidden="true">
-                        {% set unread_chat = request.profile.count_unread_chat_boxes %}
-                        {% if unread_chat %}
-                            <sub class="unread_boxes">{{unread_chat}}</sub>
-                        {% endif %}
-                    </a>
-                </span>
-
                 {% set unseen_cnt = request.profile.count_unseen_notifications %}
+
+                <span><a onclick="toggle_snow()" class="icofont-snow-flake navbar-icon"></a></span>
+
                 <span title="{{_('Notification')}}" class="{{ 'notification-open' if unseen_cnt > 0 }}">
-                    <a href="{{ url('notification') }}" class="icofont-alarm navbar-icon" id="notification" aria-hidden="true">
+                    <a href="{{ url('notification') }}" class="icofont-bell-alt navbar-icon" id="notification" aria-hidden="true">
                     {% if unseen_cnt > 0 %}    
                     <sub class="unread_boxes">{{unseen_cnt}}</sub>
                     {% endif %}
                     </a>
                 </span>
+                
                 {% endif %}
                 <span title="{{_('Language')}}">
-                    <a class="icofont-globe navbar-icon" id="nav-lang-icon" aria-hidden="true">
+                    <a class="icofont-globe-alt navbar-icon" id="nav-lang-icon" aria-hidden="true">
                     <sub class="sub-lang">{{LANGUAGE_CODE}}</sub>
                     </a>
                     <div id="lang-dropdown" class="dropdown" role="tooltip">
@@ -255,7 +251,7 @@
                     </div>
                 </span>
                 <span title="{{_('Dark Mode')}}">
-                    <span class="icofont-adjust navbar-icon" id="nav-darkmode-icon" aria-hidden="true"></span>
+                    <span class="icofont-contrast navbar-icon" id="nav-darkmode-icon" aria-hidden="true"></span>
                 </span>
             </span>
             {% if request.user.is_authenticated %}
@@ -331,6 +327,7 @@
         <div id="noscript">{{ _('This site works best with JavaScript enabled.') }}</div>
     </noscript>
     <br>
+    <div id="snow" style="display: none;"></div>
     <main id="content">
         {% block title_row %}
             <h2 style="color:#393630; display:inline">
@@ -355,7 +352,7 @@
     <footer>
         <span id="footer-content">
             <br>
-            <a style="color: #808080" target="_blank" href="https://dmoj.ca">proudly powered by <b>DMOJ</b></a><a target="_blank" href="https://github.com/LQDJudge/online-judge"> | developed by LQDJudge team</a> |
+            <a style="color: #808080" target="_blank" href="https://oj.csoj.tech/user/emladevops">from <b>emladevops</b> with ❤️</a><a target="_blank" href="https://lqdoj.edu.vn"> | forked from LQDOJ</a> |
             {% if i18n_config.footer %}
                 {{ i18n_config.footer|safe }} |
             {% endif %}
@@ -374,5 +371,130 @@
     </footer>
     {% endblock %}
 </div>
+
+<script>
+    let snowflakes_count = 200;
+
+// let base_css = ``; // Put your custom base css here
+
+if (typeof total !== 'undefined'){
+    snowflakes_count = total;
+}
+
+var toggled = false;
+
+// This function allows you to turn on and off the snow
+function toggle_snow() {
+    if (toggled == false) {
+        document.getElementById('snow').style.display = "block";
+        toggled = true;
+    }
+    else {
+        document.getElementById('snow').style.display = "none";
+        toggled = false;
+    }
+}
+
+function start() {
+    document.getElementById('snow').style.display = "none";
+}
+
+// Creating snowflakes
+function spawn_snow(snow_density = 200) {
+    snow_density -= 1;
+
+    for (let x = 0; x < snow_density; x++) {
+        let board = document.createElement('div');
+        board.className = "snowflake";
+
+        document.getElementById('snow').appendChild(board);
+    }
+}
+
+// Append style for each snowflake to the head
+function add_css(rule) {
+    let css = document.createElement('style');
+    css.type = 'text/css';
+    css.appendChild(document.createTextNode(rule)); // Support for the rest
+    document.getElementsByTagName("head")[0].appendChild(css);
+}
+
+
+
+// Math
+function random_int(value = 100){
+    return Math.floor(Math.random() * value) + 1;
+}
+
+function random_range(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// Create style for snowflake
+function spawnSnowCSS(snow_density = 200){
+    let snowflake_name = "snowflake";
+    let rule = ``;
+    if (typeof base_css !== 'undefined'){
+        rule = base_css;
+    }
+    
+    for(let i = 1; i < snow_density; i++){
+        let random_x = Math.random() * 100; // vw
+        let random_offset = random_range(-100000, 100000) * 0.0001; // vw;
+        let random_x_end = random_x + random_offset;
+        let random_x_end_yoyo = random_x + (random_offset / 2);
+        let random_yoyo_time = random_range(30000, 80000) / 100000;
+        let random_yoyo_y = random_yoyo_time * 100; // vh
+        let random_scale = Math.random();
+        let fall_duration = random_range(10, 30) * 1; // s
+        let fall_delay = random_int(30) * -1; // s
+        let opacity_ = Math.random();
+
+        rule += `
+        .${snowflake_name}:nth-child(${i}) {
+            opacity: ${opacity_};
+            transform: translate(${random_x}vw, -10px) scale(${random_scale});
+            animation: fall-${i} ${fall_duration}s ${fall_delay}s linear infinite;
+        }
+
+        @keyframes fall-${i} {
+            ${random_yoyo_time*100}% {
+                transform: translate(${random_x_end}vw, ${random_yoyo_y}vh) scale(${random_scale});
+            }
+
+            to {
+                transform: translate(${random_x_end_yoyo}vw, 100vh) scale(${random_scale});
+            }
+            
+        }
+        `
+    }
+
+    add_css(rule);
+}
+
+// Load the rules and execute after the DOM loads
+window.onload = function() {
+    spawnSnowCSS(snowflakes_count);
+    spawn_snow(snowflakes_count);
+};
+
+// TODO add progress bar for slower clients
+</script>
+
+<style>
+    .snowflake {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(#c6ddf2, #c6ddf2);
+  border-radius: 60%;
+  filter: drop-shadow(0 0 10px #c6ddf2);
+}
+</style>
+
 </body>
 </html>

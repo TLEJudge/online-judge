@@ -21,10 +21,10 @@
     color: #555;
     text-shadow: 0 1px 0 #fff;
     border-bottom: 1px solid #d8d8d8;
-    background-color: #eaeaea;
-    background-image: -moz-linear-gradient(#fafafa, #eaeaea);
-    background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
-    background-image: linear-gradient(#fafafa, #eaeaea);
+    background-color: #9394a5;
+    background-image: -moz-linear-gradient(	#9394a5, 	#9394a5);
+    background-image: -webkit-linear-gradient(	#9394a5, 	#9394a5);
+    background-image: linear-gradient(	#9394a5, 	#9394a5);
     background-repeat: repeat-x;
     clear: both;
     overflow: hidden;

@@ -15,7 +15,7 @@ import tempfile
 from django.utils.translation import ugettext_lazy as _
 from django_jinja.builtins import DEFAULT_EXTENSIONS
 from jinja2 import select_autoescape
-
+APPEND_SLASH = True
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
@@ -24,14 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "5*9f5q57mqmlz2#f$x1h76&jxy#yortjl1v+l*6hd18$d*yx#0"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SITE_ID = 1
-SITE_NAME = "LQDOJ"
-SITE_LONG_NAME = "LQDOJ: Le Quy Don Online Judge"
+SITE_NAME = "TLEOJ"
+SITE_LONG_NAME = "TLEOJ: TLE Online Judge"
 SITE_ADMIN_EMAIL = False
 
 DMOJ_REQUIRE_STAFF_2FA = True
@@ -54,7 +51,7 @@ DMOJ_CAMO_URL = None
 DMOJ_CAMO_KEY = None
 DMOJ_CAMO_HTTPS = False
 DMOJ_CAMO_EXCLUDE = ()
-DMOJ_PROBLEM_DATA_ROOT = None
+DMOJ_PROBLEM_DATA_ROOT = '/problems'
 DMOJ_PROBLEM_MIN_TIME_LIMIT = 0  # seconds
 DMOJ_PROBLEM_MAX_TIME_LIMIT = 60  # seconds
 DMOJ_PROBLEM_MIN_MEMORY_LIMIT = 0  # kilobytes
@@ -151,7 +148,7 @@ else:
 
     WPADMIN = {
         "admin": {
-            "title": "LQDOJ Admin",
+            "title": "TLEOJ Admin",
             "menu": {
                 "top": "wpadmin.menu.menus.BasicTopMenu",
                 "left": "wpadmin.menu.custom.CustomModelLeftMenuWithDashboard",
@@ -294,7 +291,7 @@ AUTH_PASSWORD_VALIDATORS = [
 SILENCED_SYSTEM_CHECKS = ["urls.W002", "fields.W342"]
 
 ROOT_URLCONF = "dmoj.urls"
-LOGIN_REDIRECT_URL = "/user"
+LOGIN_REDIRECT_URL = "/problems"
 WSGI_APPLICATION = "dmoj.wsgi.application"
 
 TEMPLATES = [
