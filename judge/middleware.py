@@ -2,7 +2,9 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.urls import Resolver404, resolve, reverse
 from django.utils.http import urlquote
+import logging
 
+logger = logging.getLogger(__name__)
 
 class ShortCircuitMiddleware:
     def __init__(self, get_response):

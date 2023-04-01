@@ -1686,7 +1686,7 @@ noscript #noscript {
 #page-container {
     border-right-color: rgb(62, 68, 70);
     border-left-color: rgb(62, 68, 70);
-    background-image: initial;
+    background-image: url("/static/final_background.png");
     background-color: rgb(24, 26, 27);
 }
 .MathJax:focus {
@@ -1798,8 +1798,14 @@ noscript #noscript {
 }
 .table.striped tr:nth-child(2n) {
     background-image: initial;
-    background-color: rgb(29, 31, 32);
+    #background-color: rgb(29, 31, 32);
 }
+
+.table.striped tr:nth-child(even) {
+
+}
+
+
 .table td:first-child {
     border-color: rgb(62, 68, 70);
 }
@@ -1811,7 +1817,7 @@ noscript #noscript {
 }
 .table th {
     color: rgb(232, 230, 227);
-    background-color: rgb(0, 0, 100);
+    background-color: #C48189;
     border-color: rgb(62, 68, 70);
 }
 .table td {
@@ -1878,12 +1884,14 @@ noscript #noscript {
     color: rgb(255, 70, 70) !important;
 }
 .left-sidebar-item.active {
-    color: rgb(114, 255, 114);
-    background-color: rgb(40, 111, 17);
+    color: #f49da7;
+    background-color: #b08389ba;
 }
 .left-sidebar-item.active .sidebar-icon {
-    color: rgb(114, 255, 114);
+    color: #f49da7;
 }
+
+
 .blog-sidebox .contest {
     border-bottom-color: rgb(62, 68, 70);
 }
@@ -1894,7 +1902,7 @@ noscript #noscript {
     color: rgb(104, 149, 191) !important;
 }
 .blog-sidebox .contest .name a:hover {
-    color: rgb(102, 177, 250) !important;
+    color: #b08389ba !important;
 }
 .no-dot-blog-sidebox ul {
     list-style-image: initial;
@@ -1914,7 +1922,7 @@ noscript #noscript {
 .blog-box {
     border-bottom-color: rgb(60, 65, 68);
     border-top-color: rgb(60, 65, 68);
-    background-color: rgb(24, 26, 27);
+    background-color: transparent !important;
 }
 .problem-feed-name a {
     color: rgb(102, 177, 250);
@@ -1926,7 +1934,7 @@ noscript #noscript {
     background-color: rgb(40, 43, 45);
 }
 .left-sidebar-item.active:hover {
-    background-color: rgb(40, 111, 17);
+    background-color: #b08389;
 }
 .sidebar-icon {
     color: rgb(232, 230, 227);
@@ -1941,9 +1949,6 @@ noscript #noscript {
     rgb(49, 53, 55) 3%,
     rgba(0, 0, 0, 0) 8%,
     rgba(0, 0, 0, 0) 100%);
-}
-.pre-expand-blog:hover {
-    background-color: rgb(31, 33, 35);
 }
 @media (min-width: 800px) {
     .blog-box {
@@ -2389,14 +2394,14 @@ a.user-redirect:hover {
 }
 .button.btn-midnightblue, button.btn-midnightblue, input[type="submit"].btn-midnightblue {
     background-image: initial;
-    background-color: rgb(20, 20, 90); 
+    background-color: #C48189; 
 }
 .button.btn-midnightblue:hover, button.btn-midnightblue:hover, input[type="submit"].btn-midnightblue:hover {
     background-image: initial;
-    background-color: rgb(0, 0, 111); 
+    background-color: #C48189; 
 }
 .button:hover, button:hover, input[type="submit"]:hover {
-    background-color: rgb(173, 72, 3);
+    background-color: #C48189;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
 }
 .button:focus, button:focus, input[type="submit"]:focus {
@@ -2561,7 +2566,7 @@ a.close:hover {
 }
 .sidebox h3 {
     background-image: initial;
-    background-color: rgb(3, 66, 54);
+    background-color: #C48189;
     color: rgb(232, 230, 227);
 }
 .sidebox h3 .fa {

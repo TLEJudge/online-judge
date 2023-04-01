@@ -8,10 +8,6 @@
     margin-bottom: 0.5em;
     background: rgba(0, 0, 0, 0.01);
 
-    &.striped tr:nth-child(even) {
-        background: #f7f7f7;
-    }
-
     td:first-child {
         border-color: $border_gray;
         border-width: 1px 1px 0 1px;
@@ -41,7 +37,7 @@
     th {
         height: 2em;
         color: white;
-        background-color: $widget_black;
+        background-color: #F4ABB4;
         border-color: #cccccc;
         border-width: 1px 1px 0 0;
         border-style: solid;

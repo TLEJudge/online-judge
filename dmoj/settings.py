@@ -15,7 +15,7 @@ import tempfile
 from django.utils.translation import ugettext_lazy as _
 from django_jinja.builtins import DEFAULT_EXTENSIONS
 from jinja2 import select_autoescape
-
+APPEND_SLASH = True
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
@@ -24,17 +24,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "5*9f5q57mqmlz2#f$x1h76&jxy#yortjl1v+l*6hd18$d*yx#0"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = []
-
-SITE_ID = 1
-SITE_NAME = "LQDOJ"
-SITE_LONG_NAME = "LQDOJ: Le Quy Don Online Judge"
+SITE_ID = 3
+SITE_NAME = "TLEOJ"
+SITE_LONG_NAME = "TLEOJ: TLE Online Judge"
 SITE_ADMIN_EMAIL = False
 
-DMOJ_REQUIRE_STAFF_2FA = True
+Debug = True
+
+DMOJ_REQUIRE_STAFF_2FA = False
 
 # Set to 1 to use HTTPS if request was made to https://
 # Set to 2 to always use HTTPS for links
@@ -54,7 +53,7 @@ DMOJ_CAMO_URL = None
 DMOJ_CAMO_KEY = None
 DMOJ_CAMO_HTTPS = False
 DMOJ_CAMO_EXCLUDE = ()
-DMOJ_PROBLEM_DATA_ROOT = None
+DMOJ_PROBLEM_DATA_ROOT = '/problems'
 DMOJ_PROBLEM_MIN_TIME_LIMIT = 0  # seconds
 DMOJ_PROBLEM_MAX_TIME_LIMIT = 60  # seconds
 DMOJ_PROBLEM_MIN_MEMORY_LIMIT = 0  # kilobytes
@@ -98,6 +97,7 @@ MATHOID_CACHE_URL = False
 TEXOID_GZIP = False
 TEXOID_META_CACHE = "default"
 TEXOID_META_CACHE_TTL = 86400
+DMOJ_NEWSLETTER_ID_ON_REGISTER = 1
 
 BAD_MAIL_PROVIDERS = ()
 BAD_MAIL_PROVIDER_REGEX = ()
@@ -150,7 +150,7 @@ else:
 
     WPADMIN = {
         "admin": {
-            "title": "LQDOJ Admin",
+            "title": "TLEOJ Admin",
             "menu": {
                 "top": "wpadmin.menu.menus.BasicTopMenu",
                 "left": "wpadmin.menu.custom.CustomModelLeftMenuWithDashboard",
@@ -243,6 +243,7 @@ INSTALLED_APPS += (
     "impersonate",
     "django_jinja",
     "chat_box",
+    "newsletter",
     "django.forms",
 )
 
@@ -293,7 +294,7 @@ AUTH_PASSWORD_VALIDATORS = [
 SILENCED_SYSTEM_CHECKS = ["urls.W002", "fields.W342"]
 
 ROOT_URLCONF = "dmoj.urls"
-LOGIN_REDIRECT_URL = "/user"
+LOGIN_REDIRECT_URL = "/problems"
 WSGI_APPLICATION = "dmoj.wsgi.application"
 
 TEMPLATES = [
@@ -380,9 +381,9 @@ BRIDGED_DJANGO_ADDRESS = [("localhost", 9998)]
 BRIDGED_DJANGO_CONNECT = None
 
 # Event Server configuration
-EVENT_DAEMON_USE = False
-EVENT_DAEMON_POST = "ws://localhost:9997/"
-EVENT_DAEMON_GET = "ws://localhost:9996/"
+EVENT_DAEMON_USE = True
+EVENT_DAEMON_POST = "wss://localhost:9997/"
+EVENT_DAEMON_GET = "wss://localhost:9996/"
 EVENT_DAEMON_POLL = "/channels/"
 EVENT_DAEMON_KEY = None
 EVENT_DAEMON_AMQP_EXCHANGE = "dmoj-events"
@@ -465,6 +466,17 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 2621440
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 MESSAGES_TO_LOAD = 15
+
+NEWSLETTER_CONFIRM_EMAIL = False
+
+# Amount of seconds to wait between each email. Here 100ms is used.
+NEWSLETTER_EMAIL_DELAY = 0.1
+
+# Amount of seconds to wait between each batch. Here one minute is used.
+NEWSLETTER_BATCH_DELAY = 60
+
+# Number of emails in one batch
+NEWSLETTER_BATCH_SIZE = 100
 
 ML_OUTPUT_PATH = None
 

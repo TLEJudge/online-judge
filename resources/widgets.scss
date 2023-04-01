@@ -94,10 +94,10 @@
     }
 
     &.btn-midnightblue {
-        background: midnightblue;
+        background: #F4ABB4;
 
         &:hover {
-            background: darkblue;
+            background: #F4ABB4;
         }
     }
 
@@ -113,7 +113,7 @@
 }
 
 .button:hover, button:hover, input[type=submit]:hover {
-    background-color: #fb8332;
+    background-color: #F4ABB4;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     transform: translateY(-1px);
 }
@@ -475,7 +475,7 @@ ul.select2-selection__rendered {
 
 .sidebox h3 {
     margin: 0 -5px;
-    background: #045343;
+    background: #F4ABB4;
     border-radius: $widget_border_radius $widget_border_radius 0 0;
     color: white;
     padding-top: 5px;

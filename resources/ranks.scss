@@ -1,6 +1,53 @@
+/*
 .admin a, .admin {
     color: black !important;
     font-weight: bold !important;
+}
+*/
+
+.admin a, .admin {
+    color: #FFC0CB !important;
+    font-weight: bold !important;
+}
+
+.admin:before{
+    content: "🌸 ";
+}
+
+
+.setter a, .setter {
+    color: #99d1db !important;
+}
+
+.setter:before {
+    content: "📖 ";
+}
+
+
+.developer::after {
+    content: none;
+}
+
+
+.developer a, .developer {
+    color: #e78284 !important;
+}
+
+.developer:before {
+    content: "👨‍💻 ";
+}
+
+.developer {
+    content: " " !important;
+}
+
+.developer::text {
+    content: " " !important;
+}
+
+.developer:after {
+    content: " (dev)";
+    color: #e5c890 !important;
 }
 
 @mixin rate-svg-color($color) {

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <title>{% block title %}{{ title }} - {{ SITE_LONG_NAME }}{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     {% if misc_config.meta_keywords %}
@@ -355,7 +358,7 @@
     <footer>
         <span id="footer-content">
             <br>
-            <a class="background-footer" target="_blank" href="https://dmoj.ca">proudly powered by <b>DMOJ</b></a><a target="_blank" href="https://github.com/LQDJudge/online-judge"> | developed by LQDJudge team</a> |
+            <a style="color: #808080" target="_blank" href="https://oj.csoj.tech/user/emladevops">from <b>emladevops</b> with ❤️</a><a style="color: #808080"> |</a><a target="_blank" href="https://github.com/TLEJudge"> We're on GitHub!</a><a style="color: #808080"> |</a><a target="_blank" href="https://lqdoj.edu.vn"> forked from LQDOJ</a> |
             {% if i18n_config.footer %}
                 {{ i18n_config.footer|safe }} |
             {% endif %}
@@ -374,5 +377,14 @@
     </footer>
     {% endblock %}
 </div>
+
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8875688499820329"
+    crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads"
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+
 </body>
 </html>

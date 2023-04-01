@@ -2392,6 +2392,7 @@ class Migration(migrations.Migration):
                             ("user", "Normal User"),
                             ("setter", "Problem Setter"),
                             ("admin", "Admin"),
+                            ("developer", "Developer"),
                         ],
                         default="user",
                         max_length=10,

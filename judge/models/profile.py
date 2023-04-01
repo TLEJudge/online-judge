@@ -164,6 +164,7 @@ class Profile(models.Model):
             ("user", "Normal User"),
             ("setter", "Problem Setter"),
             ("admin", "Admin"),
+            ("developer", "Developer"),
         ),
     )
     mute = models.BooleanField(

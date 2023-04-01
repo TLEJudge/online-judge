@@ -38,11 +38,11 @@
 }
 
 .left-sidebar-item.active {
-    color: green;
+    color: #f6999e;
     font-weight: bold;
-    background-color: lightgreen;
+    background-color: #fec5c9a1;
     .sidebar-icon {
-        color: green;
+        color: #f6999e;
     }
 }
 
@@ -140,7 +140,6 @@
     margin-bottom: 1.5em;
     width: 90%;
     padding: 1em 1.25em 0.5em 1.25em;
-    background-color: white;
     margin-left: auto;
     margin-right: auto;
 
@@ -188,7 +187,7 @@
     cursor: pointer;
 }
 .left-sidebar-item.active:hover {
-    background-color: lightgreen;
+    background-color: #fec5c9;
 }
 .sidebar-icon {
     color: black;
@@ -207,10 +206,6 @@
     background-image: -webkit-linear-gradient(bottom, gray, lightgray 3%, transparent 8%, transparent 100%);
     padding-bottom: 0;
 }
-.pre-expand-blog:hover {
-    background-color: #f3f3f3;
-}
-
 .post-full {
     .post-title {
         font-weight: bold;
