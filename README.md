@@ -3,7 +3,7 @@ TLEOJ: TLE Online Judge
 
 ## Overview
 
-Homepage: [https://oj.csoj.tech](https://oj.csoj.tech)
+Homepage: [https://tleoj.edu.vn](https://tleoj.edu.vn)
 
 Based on [LQDOJ](https://lqdoj.edu.vn/).
 
@@ -11,10 +11,11 @@ Supported languages:
 
 - Assembly (x64)
 - AWK
-- Brainf**k
+- Brainfxck
 - C
 - C++03 / C++11 / C++14 / C++17 / C++20
 - Java 8 / Java 11
+- Scratch
 - Pascal
 - Perl
 - Python 2 / Python 3
@@ -50,7 +51,7 @@ source dmojsite/bin/activate
 
 2. Run server:
 ```bash
-python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:80 #80 is a good idea? :kekw:
 ```
 
 3. Create a bridge (this is opened in a different terminal with the second step if you are using the same machine)
