@@ -46,7 +46,7 @@ Suppose you finished all the installation. Everytime you want to run a local ser
 
 1. Activate virtualenv:
 ```bash
-source dmojsite/bin/activate
+source dmojsite/bin/activate # Should replace your default ~/.bashrc
 ```
 
 2. Run server:
@@ -56,12 +56,12 @@ python manage.py runserver 0.0.0.0:80 #80 is a good idea? :kekw:
 
 3. Create a bridge (this is opened in a different terminal with the second step if you are using the same machine)
 ```bash
-python manage.py runbridged
+python manage.py runbridged # Use a tmux session, then detach it (I recommend doing so)
 ```
 
 4. Create a judge (another terminal)
 ```bash
-dmoj 0.0.0.0 -p 9999 -c <path to yml configure file>
+dmoj 0.0.0.0 -p 9999 -c <path to yml configure file> # You may not have to do this
 ```
 Here we suppose you use the default port 9999 for bridge in `settings.py`. You can create multiple judges, each should be in a seperate terminal.
 
@@ -78,7 +78,7 @@ node websocket/daemon.js
 ```
 
 ## Deploy
-Most of the steps are similar to Django tutorials. Here are two usual steps:
+Most of the steps are similar to LQDOJ Docs. Here are two steps:
 
 1. Update vietnamese translation:
  - If you add any new phrases in the code, ```python manage.py makemessages```
