@@ -3,7 +3,7 @@ django_compressor>=3
 django-mptt>=0.13
 django-pagedown
 django-registration-redux>=2.10
-django-reversion>=3.0.5,<4
+django-reversion>=5.0.12,<6
 django-reversion-compare
 django-social-share
 django-sortedm2m>=3.1.0
