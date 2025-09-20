@@ -1,9 +1,9 @@
-TLEOJ: TLE Online Judge
+QTOJ: Quang Tri Online Judge
 ===
 
 ## Overview
 
-Homepage: [https://tleoj.edu.vn](https://tleoj.edu.vn)
+Homepage: [https://quangtroj.edu.vn](https://quangtroj.edu.vn)
 
 Based on [LQDOJ](https://lqdoj.edu.vn/).
 
