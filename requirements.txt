@@ -9,7 +9,7 @@ django-social-share
 django-sortedm2m>=3.1.0
 django-impersonate
 dmoj-wpadmin @ git+https://github.com/LQDJudge/dmoj-wpadmin.git
-lxml
+lxml[html_clean] #since lxml got separate to 2 different projects
 Pygments
 social-auth-app-django
 pytz
