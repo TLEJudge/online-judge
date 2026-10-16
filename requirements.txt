@@ -1,4 +1,4 @@
-Django>=3.2,<4
+Django>=6.1,<7
 django_compressor>=3
 django-mptt>=0.13
 django-pagedown
